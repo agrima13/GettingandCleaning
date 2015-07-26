@@ -24,8 +24,6 @@ train<-train[,stdmeanindices]
 ##Uses descriptive activity names to name the activities in the data set
 activity <- read.table(file=file.choose())
 activity[, 2] <- tolower(gsub("_", "", activity[, 2]))
-substr(activity[2, 2], 8, 8) <- toupper(substr(activity[2, 2], 8, 8))
-substr(activity[3, 2], 8, 8) <- toupper(substr(activity[3, 2], 8, 8))
 activityLabel <- activity[test[, 1], 2]
 test[, 1] <- activityLabel
 names(test) <- "Activity"
